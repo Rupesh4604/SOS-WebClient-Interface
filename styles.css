@@ -1,0 +1,180 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Replace existing .map-container with this */
+.map-container {
+    width: 100%;
+    height: 400px; /* Reduced from 500px */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Add this new rule */
+.card-body.fixed-height {
+    height: 450px; /* Fixed height for map card */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Adjust results card */
+.results-card {
+    margin-top: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px; /* Minimum height for results */
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+#xml-response {
+    height: 200px;
+    overflow-y: auto;
+    font-size: 12px;
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+}
+
+.sensor-marker {
+    width: 20px;
+    height: 20px;
+    background-color: #dc3545;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    position: relative;
+}
+
+.sensor-marker::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.sensor-marker.selected {
+    background-color: #28a745;
+    width: 24px;
+    height: 24px;
+}
+
+.sensor-marker.selected::after {
+    width: 12px;
+    height: 12px;
+    top: 6px;
+    left: 6px;
+}
+
+.popup-content {
+    min-width: 200px;
+}
+
+.popup-title {
+    font-weight: bold;
+    color: #0d6efd;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.popup-row {
+    margin-bottom: 3px;
+}
+
+.popup-label {
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.table-responsive {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    border: 0.2em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border 0.75s linear infinite;
+}
+
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
+}
+
+/* New Graph Styles */
+#chart-container {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+}
+
+/* New Table Styles */
+.sensor-data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.sensor-data-table thead th {
+    background-color: #343a40;
+    color: white;
+    position: sticky;
+    top: 0;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.sensor-data-table tbody tr {
+    transition: all 0.2s;
+}
+
+.sensor-data-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.sensor-data-table tbody tr:hover {
+    background-color: #e9ecef;
+    transform: translateX(2px);
+}
+
+.sensor-data-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.sensor-data-table td:first-child {
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Layout adjustment */
+.results-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
